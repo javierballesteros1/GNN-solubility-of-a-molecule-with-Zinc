@@ -23,8 +23,7 @@ First of all, let's explore the data. A molecule is a group of two or more atoms
 <img src="https://github.com/javierballesteros1/GNN-solubility-of-a-molecule-with-Zinc/blob/main/images/molecule.png" >
 </p>
 
-#### Understand the data & Graph theory
-A graph is used to model pairwise relations (edges) between objects (nodes). A single graph in PyG is described by an instance of torch_geometric.data.Data, which holds the following attributes by default:
+This particular molecule has the following structure `Data(x=[18, 1], edge_index=[2, 36], edge_attr=[36], y=[1])`. Let's explain each component:
 
 -  data.x: Node feature matrix with shape [num_nodes, num_node_features]
 
