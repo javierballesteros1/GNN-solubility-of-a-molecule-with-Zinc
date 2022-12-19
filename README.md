@@ -33,8 +33,21 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 
 -  `y=[1]`: Target to train against. In our example, [1] is the dimension: the degree of solubility of each molecule (it is a scalar). 
 
+### Molecule representation
+In the description above we checked the shape of each component of the graph. Now, let's see how each molecule is described:
+-
+-
+-
+-
+
 ### Batching of graphs
-Here I have to add a brief explanation and the plot from the google colab number 3
+As explained in the [PyG documentation](https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html), similar to what is done in the image or language domain, by rescaling or padding each example into a set of equally-sized shapes, and examples are then grouped in an additional dimension, in graph analysis a good idea is to batch the graphs before inputting them into a Graph Neural Network to guarantee full GPU utilization. The length of this dimension is then equal to the number of examples grouped in a mini-batch and is typically referred to as the batch_size.
+
+Therefore, PyG opts for another approach to achieve parallelization across a number of examples. Here, adjacency matrices are stacked in a diagonal fashion (creating a giant graph that holds multiple isolated subgraphs), and node and target features are simply concatenated in the node dimension:
+
+<p align="center">
+<img src="https://github.com/javierballesteros1/GNN-solubility-of-a-molecule-with-Zinc/blob/main/images/batch.png" >
+</p>
 
 ### Why do we need Graph Neural Networks?
 
