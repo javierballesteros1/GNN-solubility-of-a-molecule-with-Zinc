@@ -1,8 +1,8 @@
 # PyG: How to Evaluate the Solubility of a Molecule with Zinc thorugh Graph Neural Networks
 
-![My Image](https://raw.githubusercontent.com/pyg-team/pyg_sphinx_theme/master/pyg_sphinx_theme/static/img/pyg_logo_text.svg?sanitize=true)
-
+<p align="center">
 <img src="https://raw.githubusercontent.com/pyg-team/pyg_sphinx_theme/master/pyg_sphinx_theme/static/img/pyg_logo_text.svg?sanitize=true" width=50% height=50%>
+</p>
 
 #### Getting started
 
