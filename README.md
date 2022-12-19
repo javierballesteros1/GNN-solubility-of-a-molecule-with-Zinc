@@ -19,7 +19,9 @@ The Zinc dataset, whose documentation can be found [here](https://pytorch-geomet
 
 First of all, let's explore the data. A molecule is a group of two or more atoms held together by attractive forces known as chemical bonds. In other words, the nodes are the atoms and the edges are the chemical bonds between the atoms. Let's see a molecule given in the data:
 
-
+<p align="center">
+<img src="https://github.com/javierballesteros1/GNN-solubility-of-a-molecule-with-Zinc/blob/main/images/molecule.png" >
+</p>
 
 #### Understand the data & Graph theory
 A graph is used to model pairwise relations (edges) between objects (nodes). A single graph in PyG is described by an instance of torch_geometric.data.Data, which holds the following attributes by default:
