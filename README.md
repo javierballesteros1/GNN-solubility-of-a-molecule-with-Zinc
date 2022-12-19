@@ -1,7 +1,7 @@
 # PyG: How to Evaluate the Solubility of a Molecule with Zinc through Graph Neural Networks
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/pyg-team/pyg_sphinx_theme/master/pyg_sphinx_theme/static/img/pyg_logo_text.svg?sanitize=true" width=50% height=50%>
+<img src="https://raw.githubusercontent.com/pyg-team/pyg_sphinx_theme/master/pyg_sphinx_theme/static/img/pyg_logo_text.svg?sanitize=true" width=40% height=40%>
 </p>
 
 PyG (PyTorch Geometric) is a library built upon PyTorch to easily write and train Graph Neural Networks (GNNs) for a wide range of applications related to structured data. It consists of various methods for deep learning on graphs and other irregular structures, also known as geometric deep learning.
@@ -25,23 +25,13 @@ First of all, let's explore the data. A molecule is a group of two or more atoms
 
 This particular molecule has the following structure `Data(x=[18, 1], edge_index=[2, 36], edge_attr=[36], y=[1])`. Let's explain each component:
 
--  data.x: Node feature matrix with shape [num_nodes, num_node_features]
+-  `x=[18, 1]`: `x` is the node feature matrix with shape [num_nodes, num_node_features]. For this particular molecule, we have 18 nodes.
 
--  data.edge_index: Graph connectivity in COO format with shape [2, num_edges] and type torch.long
+-  `edge_index=[2, 36]`: it shows the graph connectivity in COO format with shape [2, num_edges], being each column the indeces of the nodes that are connected. In the example, there are 36/2 = 18 edges, as for every edge, we need to define two index tuples to account for both directions of a edge.
 
--  data.edge_attr: Edge feature matrix with shape [num_edges, num_edge_features]
+-  `edge_attr=[36]`: feature matrix with shape [num_edges, num_edge_features]
 
--  data.y: Target to train against (may have arbitrary shape), e.g., node-level targets of shape [num_nodes, *] or graph-level targets of shape [1, *]
-
--  data.pos: Node position matrix with shape [num_nodes, num_dimensions]
-
-For instace, "Data(x=[29, 1], edge_index=[2, 64], edge_attr=[64], y=[1])", which is the first observation of the dataset, stands for 29 nodes and 64 edges. Edge_index is a matrix od two rows and 64 colums, being each column the indeces of the nodes that are connected. For every edge, we need to define two index tuples to account for both directions of a edge.
-
-
-
-
-
-Coordinate format: https://pytorch.org/docs/stable/sparse.html#sparse-coo-docs
+-  `y=[1]`: Target to train against. In our example, [1] is the dimension: the degree of solubility of each molecule (it is a scalar). 
 
 #### Formulate the problem
 
