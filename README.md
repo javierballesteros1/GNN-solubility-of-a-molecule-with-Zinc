@@ -33,20 +33,29 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 
 -  `y=[1]`: Target to train against. In our example, [1] is the dimension: the degree of solubility of each molecule (it is a scalar). 
 
-#### Formulate the problem
+### Batching of graphs
+Here I have to add a brief explanation and the plot from the google colab number 3
 
-1. The graph itself and the labels for each node
-2. The edge data in the Coordinate Format (COO)
-3. Embeddings or numerical representations for the nodes
+### Why do we need Graph Neural Networks?
 
+As we have seen, if we want to classify images we might choose Convolutional Neural Networks (CNN). Images are basically matrices of pixel values, which are **ordered**. Each image has a top and bottom, left and right. In the same spirit, in all flavours of recurrent neural networks (RNN) we pass in vectors that reflect measurements from a time series or a sequence.
+
+Recall how a convolutional layer works: we slide the convolutional operator window across a two-dimensional image, and we compute some function over that sliding window. Then, we pass it through many layers. How would we apply this layer on a graph? It would be very difficult and ambiguous, as graphs do not have a natural order or reference point. Thus there does not exist a top and a bottom or a left and right. This is different compared to the type of data we can explain with linear regression, CNNs or RNNs. A picture consists of a regular lattice. RNNs learn sequences of well ordered vectors.
+
+It’s very difficult to perform CNN on graphs because of the arbitrary size of the graph, and the complex topology, which means there is no spatial locality. 
 
 ## Graph Neural Network
+
 Graph Neural Networks (GNNs) are a class of deep learning methods designed to perform inference on data described by graphs. GNNs are neural networks that can be directly applied to graphs, and provide an easy way to do node-level, edge-level, and graph-level prediction tasks.GNNs can do what Convolutional Neural Networks (CNNs) failed to do. It’s very difficult to perform CNN on graphs because of the arbitrary size of the graph, and the complex topology, which means there is no spatial locality. 
 
 There’s also unfixed node ordering. If we first labeled the nodes A, B, C, D, E, and the second time we labeled them B, D, A, E, C, then the inputs of the matrix in the network will change. Graphs are invariant to node ordering, so we want to get the same result regardless of how we order the nodes.
 
+#### Message passing layers
+
+#### Readout layer
 
 
 
 
-#### 
+
+
