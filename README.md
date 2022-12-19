@@ -11,7 +11,7 @@ PyG (PyTorch Geometric) is a library built upon PyTorch to easily write and trai
 Here we are going the describe the dataset, nodes and edges, maybe some of graph theory, and that we are going to use PyG
 
 ### What is a Graph?
-Following the explanation in this [page][https://neptune.ai/blog/graph-neural-network-and-some-of-gnn-applications#:~:text=Graph%20Neural%20Networks%20(GNNs)%20are,and%20graph%2Dlevel%20prediction%20tasks] 
+Following the explanation in this [page](https://neptune.ai/blog/graph-neural-network-and-some-of-gnn-applications#:~:text=Graph%20Neural%20Networks%20(GNNs)%20are,and%20graph%2Dlevel%20prediction%20tasks)
 
 #### GNN 
 https://neptune.ai/blog/graph-neural-network-and-some-of-gnn-applications#:~:text=Graph%20Neural%20Networks%20(GNNs)%20are,and%20graph%2Dlevel%20prediction%20tasks
