@@ -34,8 +34,9 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 -  `y=[1]`: Target to train against. In our example, [1] is the dimension: the degree of solubility of each molecule (it is a scalar). 
 
 ### Molecule representation
+
 In the description above we checked the shape of each component of the graph. Now, let's see how each molecule is described:
--
+- 
 -
 -
 -
