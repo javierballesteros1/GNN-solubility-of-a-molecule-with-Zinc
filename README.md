@@ -1,8 +1,9 @@
 # PyG: how to evaluate the solubility of a molecule with Zinc thorugh Graph Neural Networks
 
 <p align="center">
-  <img height="320px" src="https://github.com/MehdiZouitine/pybrook/blob/main/image/pybrook_logo.jpg?raw=true" alt="example0">
+  <img height="320px" src="https://github.com/javierballesteros1/GNN-solubility-of-a-molecule-with-Zinc/blob/main/images/pyg_logo_text.svg>
 </p>
+
 #### Getting started
 
 Here we are going the describe the dataset, nodes and edges, maybe some of graph theory, and that we are going to use PyG
