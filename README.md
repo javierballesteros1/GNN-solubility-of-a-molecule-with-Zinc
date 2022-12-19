@@ -1,7 +1,6 @@
-# Geometric Deep Learning
+## PyG: how to evaluate the solubility of a molecule with Zinc thorugh Graph Neural Networks
 
-## Graph Neural Network: how to evaluate the solubility of a molecule with Zinc
-
+![alt text](https://raw.githubusercontent.com/pyg-team/pyg_sphinx_theme/master/pyg_sphinx_theme/static/img/pyg_logo_text.svg?sanitize=true)
 
 #### Getting started
 
