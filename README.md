@@ -105,7 +105,7 @@ Paste the code
 
 
 
-## GNN Training
+### GNN Training
 
 Plot of the errors
 
