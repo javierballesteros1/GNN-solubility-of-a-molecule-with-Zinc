@@ -36,7 +36,9 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 ### Molecule representation
 
 In the description above we checked the shape of each component of the graph. Now, let's see how each molecule is described:
-- 
+
+- The node feature matrix `x`: `tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1,
+        2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 2])`
 -
 -
 -
