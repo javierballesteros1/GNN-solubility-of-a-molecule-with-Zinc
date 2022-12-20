@@ -85,16 +85,18 @@ It’s very difficult to perform CNN on graphs because of the arbitrary size of 
 
 ## Graph Neural Network Architecture
 
-Graph Neural Networks (GNNs) are a class of deep learning methods designed to perform inference on data described by graphs. GNNs are neural networks that can be directly applied to graphs, and provide an easy way to do node-level, edge-level, and graph-level prediction tasks. Following 
+We are going to briefly explain the architecture of Graph Neural Networks (GNNs) based on this [page](https://neptune.ai/blog/graph-neural-network-and-some-of-gnn-applications#:~:text=Graph%20Neural%20Networks%20(GNNs)%20are,and%20graph%2Dlevel%20prediction%20tasks) and this [page](https://en.wikipedia.org/wiki/Graph_neural_network). GNNs are a class of deep learning methods designed to perform inference on data described by graphs. GNNs are neural networks that can be directly applied to graphs, and provide an easy way to do node-level, edge-level, and graph-level prediction tasks.  
 
-The architecture of a generic GNN implements the following fundamental layers:
+The architecture of a generic GNN implements the following fundamental layers: Message passing layers and Readout layer.
 
-- Permutation equivariant: a permutation equivariant layer maps a representation of a graph into an updated representation of the same graph. In the literature, permutation equivariant layers are implemented via pairwise message passing between graph nodes.[4][8] Intuitively, in a message passing layer, nodes update their representations by aggregating the messages received from their immediate neighbours. As such, each message passing layer increases the receptive field of the GNN by one hop.
+#### Message passing layers (or Permuatation equivariant layers)
 
-- Global pooling: a global pooling layer, also known as readout layer, provides fixed-size representation of the whole graph. The global pooling layer must be permutation invariant, such that permutations in the ordering of graph nodes and edges do not alter the final output.[20] Examples include element-wise sum, mean or maximum.
-#### Message passing layers
+This layer maps a representation of a graph into an updated representation of the same graph. In the literature, permutation equivariant layers are implemented via pairwise message passing between graph nodes. Intuitively, in a message passing layer, nodes update their representations by aggregating the messages received from their immediate neighbours. As such, each message passing layer increases the receptive field of the GNN by one hop.
 
-#### Readout layer
+#### Readout layer (or Global pooling layer)
+
+A readout layer provides fixed-size representation of the whole graph. The global pooling layer must be permutation invariant, such that permutations in the ordering of graph nodes and edges do not alter the final output. Examples include element-wise sum, mean or maximum.
+
 
 ## GNN Training
 
