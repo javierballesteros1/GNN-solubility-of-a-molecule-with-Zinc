@@ -29,7 +29,15 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 
 -  `edge_index=[2, 36]`: it shows the graph connectivity in COO format with shape [2, num_edges], being each column the indeces of the nodes that are connected. In the example, there are 36/2 = 18 edges, as for every edge, we need to define two index tuples to account for both directions of a edge.
 
--  `edge_attr=[36]`: feature matrix with shape [num_edges, num_edge_features]
+`tensor([[ 0,  1,  1,  2,  2,  3,  3,  4,  4,  4,  5,  6,  6,  6,  7,  8,  8,  8,
+          9, 10, 10, 11, 11, 11, 12, 12, 13, 13, 14, 14, 14, 15, 16, 16, 17, 17],
+        [ 1,  0,  2,  1,  3,  2,  4,  3,  5,  6,  4,  4,  7,  8,  6,  6,  9, 10,
+          8,  8, 11, 10, 12, 17, 11, 13, 12, 14, 13, 15, 16, 14, 14, 17, 11, 16]])
+
+-  `edge_attr=[36]`: feature matrix with shape [num_edges, num_edge_features].
+
+`tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1,
+        2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 2])`
 
 -  `y=[1]`: Target to train against. In our example, [1] is the dimension: the degree of solubility of each molecule (it is a scalar). 
 
@@ -37,10 +45,30 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 
 In the description above we checked the shape of each component of the graph. Now, let's see how each molecule is described:
 
-- The node feature matrix `x`: `tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1,
-        2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 2])`
+- The node feature matrix `x`: 
+tensor([[0], 
+        [1],
+        [0],
+        [0],
+        [4],
+        [0],
+        [0],
+        [1],
+        [2],
+        [0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [1],
+        [0],
+        [0]])
+- 
+- 
+- 
 -
--
+- 
 -
 
 ### Batching of graphs
