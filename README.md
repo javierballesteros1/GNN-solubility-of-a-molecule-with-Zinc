@@ -93,14 +93,24 @@ The architecture of a generic GNN implements the following fundamental layers: M
 
 This layer maps a representation of a graph into an updated representation of the same graph. In the literature, permutation equivariant layers are implemented via pairwise message passing between graph nodes. Intuitively, in a message passing layer, nodes update their representations by aggregating the messages received from their immediate neighbours. As such, each message passing layer increases the receptive field of the GNN by one hop.
 
+Node embedding
+
 #### Readout layer (or Global pooling layer)
 
 A readout layer provides fixed-size representation of the whole graph. The global pooling layer must be permutation invariant, such that permutations in the ordering of graph nodes and edges do not alter the final output. Examples include element-wise sum, mean or maximum.
 
+### GNN Architecture for the Zinc data
+
+Paste the code
+
+
 
 ## GNN Training
 
-## GNN Test
+Plot of the errors
+
+### GNN Test
+MSE and...?
 
 
 
