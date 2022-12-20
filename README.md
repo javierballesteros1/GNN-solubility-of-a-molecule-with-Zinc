@@ -55,7 +55,7 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
           
 We can observe that indeed the first two columsn are $(0,1)^T$ and $(1,0)^T$, meaning that these two nodes are connected in both directions. Thus, as this happens for all the nodes, we can check that the graph in undirected.
 
--  `edge_attr=[36]`: feature matrix with shape [num_edges, num_edge_features].
+-  `edge_attr=[36]`: feature matrix with shape [num_edges, num_edge_features]. We see below the one-row vector, so each edge is defined by one feature (a scalar).
 
 `tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1,
         2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 2])`
@@ -63,6 +63,8 @@ We can observe that indeed the first two columsn are $(0,1)^T$ and $(1,0)^T$, me
 -  `y=[1]`: Target to train against. In our example, [1] is the dimension: the degree of solubility of each molecule (it is a scalar). 
 
 `tensor([0.4907])`
+
+This value is the target to be predicted.
 
 ### Batching of graphs
 As explained in the [PyG documentation](https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html), similar to what is done in the image or language domain, by rescaling or padding each example into a set of equally-sized shapes, and examples are then grouped in an additional dimension, in graph analysis a good idea is to batch the graphs before inputting them into a Graph Neural Network to guarantee full GPU utilization. The length of this dimension is then equal to the number of examples grouped in a mini-batch and is typically referred to as the batch_size.
