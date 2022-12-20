@@ -25,7 +25,7 @@ First of all, let's explore the data. A molecule is a group of two or more atoms
 
 This particular molecule has the following structure `Data(x=[18, 1], edge_index=[2, 36], edge_attr=[36], y=[1])`. Let's explain each component:
 
--  `x=[18, 1]`: `x` is the node feature matrix with shape [num_nodes, num_node_features]. For this particular molecule, we have 18 nodes.
+-  `x=[18, 1]`: `x` is the node feature matrix with shape [num_nodes, num_node_features]. For this particular molecule, we have 18 nodes. For each node, we see there are 1 node feature. That is, each node is described by a scalar. Find below this representation (actually it is the transpose, as it should be a column vector).
 
 `tensor([[0], 
         [1],
@@ -46,13 +46,14 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
         [0],
         [0]])`
 
--  `edge_index=[2, 36]`: it shows the graph connectivity in COO format with shape [2, num_edges], being each column the indeces of the nodes that are connected. In the example, there are 36/2 = 18 edges, as for every edge, we need to define two index tuples to account for both directions of a edge.
+-  `edge_index=[2, 36]`: it shows the graph connectivity in COO format with shape [2, num_edges], being each column the indeces of the nodes that are connected. In the example, there are 36/2 = 18 edges, as for every edge, we need to define two index tuples to account for both directions of a edge. Find below this matrix. 
 
 `tensor([[ 0,  1,  1,  2,  2,  3,  3,  4,  4,  4,  5,  6,  6,  6,  7,  8,  8,  8,
-          9, 10, 10, 11, 11, 11, 12, 12, 13, 13, 14, 14, 14, 15, 16, 16, 17, 17],` 
-          
-        `[ 1,  0,  2,  1,  3,  2,  4,  3,  5,  6,  4,  4,  7,  8,  6,  6,  9, 10,
+          9, 10, 10, 11, 11, 11, 12, 12, 13, 13, 14, 14, 14, 15, 16, 16, 17, 17],
+          [ 1,  0,  2,  1,  3,  2,  4,  3,  5,  6,  4,  4,  7,  8,  6,  6,  9, 10,
           8,  8, 11, 10, 12, 17, 11, 13, 12, 14, 13, 15, 16, 14, 14, 17, 11, 16]])`
+          
+We can observe that indeed the first two columsn are $(0,1)^T$ and $(1,0)^T$, meaning that these two nodes are connected in both directions. Thus, as this happens for all the nodes, we can check that the graph in undirected.
 
 -  `edge_attr=[36]`: feature matrix with shape [num_edges, num_edge_features].
 
@@ -61,6 +62,7 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 
 -  `y=[1]`: Target to train against. In our example, [1] is the dimension: the degree of solubility of each molecule (it is a scalar). 
 
+`tensor([0.4907])`
 
 ### Batching of graphs
 As explained in the [PyG documentation](https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html), similar to what is done in the image or language domain, by rescaling or padding each example into a set of equally-sized shapes, and examples are then grouped in an additional dimension, in graph analysis a good idea is to batch the graphs before inputting them into a Graph Neural Network to guarantee full GPU utilization. The length of this dimension is then equal to the number of examples grouped in a mini-batch and is typically referred to as the batch_size.
