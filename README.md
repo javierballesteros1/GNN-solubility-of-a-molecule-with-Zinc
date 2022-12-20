@@ -49,7 +49,8 @@ This particular molecule has the following structure `Data(x=[18, 1], edge_index
 -  `edge_index=[2, 36]`: it shows the graph connectivity in COO format with shape [2, num_edges], being each column the indeces of the nodes that are connected. In the example, there are 36/2 = 18 edges, as for every edge, we need to define two index tuples to account for both directions of a edge.
 
 `tensor([[ 0,  1,  1,  2,  2,  3,  3,  4,  4,  4,  5,  6,  6,  6,  7,  8,  8,  8,
-          9, 10, 10, 11, 11, 11, 12, 12, 13, 13, 14, 14, 14, 15, 16, 16, 17, 17],`
+          9, 10, 10, 11, 11, 11, 12, 12, 13, 13, 14, 14, 14, 15, 16, 16, 17, 17],` 
+          
         `[ 1,  0,  2,  1,  3,  2,  4,  3,  5,  6,  4,  4,  7,  8,  6,  6,  9, 10,
           8,  8, 11, 10, 12, 17, 11, 13, 12, 14, 13, 15, 16, 14, 14, 17, 11, 16]])`
 
