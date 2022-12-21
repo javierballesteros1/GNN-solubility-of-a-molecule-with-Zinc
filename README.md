@@ -110,7 +110,30 @@ A readout layer provides fixed-size representation of the whole graph. In other 
 
 ### GNN Architecture for the Zinc data
 
-Paste the code
+Find below the architecture that we ...
+```
+class GCN(nn.Module):
+    def __init__(self, num_features, num_classes, hidden_channels_1, hidden_channels_2):
+        super(GCN, self).__init__()
+        self.conv1 = GCNConv(num_features, hidden_channels_1)
+        self.conv2 = GCNConv(hidden_channels_1, hidden_channels_1)
+        self.conv3 = GCNConv(hidden_channels_1, hidden_channels_2)
+        self.conv4 = GCNConv(hidden_channels_2, num_classes)
+
+    def forward(self, x, edge_index, batch):
+        # 1. Obtain node embeddings through Message passing layers 
+        x = self.conv1(x, edge_index)
+        x = torch.relu(x)
+        x = self.conv2(x, edge_index)
+        x = torch.relu(x)
+        x = self.conv3(x, edge_index)
+        x = torch.relu(x)
+        x = self.conv4(x, edge_index)
+
+        # 2. Readout layer
+        g_pool = global_mean_pool(x, batch)
+        return g_pool
+```
 
 
 
