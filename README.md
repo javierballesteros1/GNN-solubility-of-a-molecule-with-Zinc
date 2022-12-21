@@ -136,12 +136,14 @@ class GCN(nn.Module):
 ```
 So the GNN architecture is given by
 
-`GCN(  
+```
+GCN(  
   (conv1): GCNConv(1, 4)  
   (conv2): GCNConv(4, 4)  
   (conv3): GCNConv(4, 4)  
   (conv4): GCNConv(4, 1)  
-)`
+)
+```
 
 
 ### GNN Training
