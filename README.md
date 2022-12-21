@@ -15,7 +15,7 @@ Following the explanation in this [page](https://neptune.ai/blog/graph-neural-ne
 
 
 ### Zinc dataset
-The Zinc dataset, whose documentation can be found [here](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html#torch_geometric.datasets.ZINC) contains 220,011 molecules, which are represented in graphs. For each molecule, the degree of solubility is provided. The task is to predict this solubility with Graph Regression.
+The Zinc dataset, whose documentation can be found [here](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html#torch_geometric.datasets.ZINC), contains 220,011 molecules, which are represented in graphs. For each molecule, the degree of solubility is provided. The task is to predict this solubility with Graph Regression.
 
 First of all, let's explore the data. A molecule is a group of two or more atoms held together by attractive forces known as chemical bonds. In other words, the nodes are the atoms and the edges are the chemical bonds between the atoms. Let's see a molecule given in the data:
 
@@ -92,6 +92,35 @@ The architecture of a generic GNN implements the following fundamental layers: M
 #### Message passing layers (or Permuatation equivariant layers)
 
 This layer maps a representation of a graph into an updated representation of the same graph. In the literature, permutation equivariant layers are implemented via pairwise message passing between graph nodes. Intuitively, in a message passing layer, nodes update their representations by aggregating the messages received from their immediate neighbours. As such, each message passing layer increases the receptive field of the GNN by one hop.
+
+We are going to put a bit more formally this explanation (following [this](https://en.wikipedia.org/wiki/Graph_neural_network)). Let {\displaystyle G=(V,E)}G=(V,E) be a graph, where {\displaystyle V}V is the node set and {\displaystyle E}E is the edge set. Let {\displaystyle N_{u}}N_{u} be the neighbourhood of some node {\displaystyle u\in V}u \in V. Additionally, let {\displaystyle \mathbf {x} _{u}}{\displaystyle \mathbf {x} _{u}} be the features of node {\displaystyle u\in V}u \in V, and {\displaystyle \mathbf {e} _{uv}}{\displaystyle \mathbf {e} _{uv}} be the features of edge {\displaystyle (u,v)\in E}(u,v)\in E. An MPNN layer can be expressed as follows:
+$$
+
+$$
+
+
+
+[4]
+
+{\displaystyle \mathbf {h} _{u}=\phi \left(\mathbf {x_{u}} ,\bigoplus _{v\in N_{u}}\psi (\mathbf {x} _{u},\mathbf {x} _{v},\mathbf {e} _{uv})\right)}{\displaystyle \mathbf {h} _{u}=\phi \left(\mathbf {x_{u}} ,\bigoplus _{v\in N_{u}}\psi (\mathbf {x} _{u},\mathbf {x} _{v},\mathbf {e} _{uv})\right)}
+where {\displaystyle \phi }\phi  and {\displaystyle \psi }\psi  are differentiable functions (e.g., artificial neural networks), and {\displaystyle \bigoplus }{\displaystyle \bigoplus } is a permutation invariant aggregation operator that can accept an arbitrary number of inputs (e.g., element-wise sum, mean, or max). In particular, {\displaystyle \phi }\phi  and {\displaystyle \psi }\psi  are referred to as update and message functions, respectively. Intuitively, in an MPNN computational block, graph nodes update their representations by aggregating the messages received from their neighbours.
+
+The outputs of one or more MPNN layers are node representations {\displaystyle \mathbf {h} _{u}}{\displaystyle \mathbf {h} _{u}} for each node {\displaystyle u\in V}u \in V in the graph. Node representations can be employed for any downstream task, such as node/graph classification or edge prediction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Node embedding
 
