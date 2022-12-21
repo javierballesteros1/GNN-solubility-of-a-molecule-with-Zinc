@@ -106,7 +106,7 @@ In the literature we sometimes find that these layers are known to perform node 
 
 #### Readout layer (or Global pooling layer)
 
-A readout layer provides fixed-size representation of the whole graph. The global pooling layer must be permutation invariant, such that permutations in the ordering of graph nodes and edges do not alter the final output. Examples include element-wise sum, mean or maximum.
+A readout layer provides fixed-size representation of the whole graph. In other words, a readout layer collects all node representations in a graph to form a graph representation (source [here](https://torchdrug.ai/docs/notes/layer.html#:~:text=A%20readout%20layer%20collects%20all,every%20node%20in%20the%20graph.)). The global pooling layer must be permutation invariant, such that permutations in the ordering of graph nodes and edges do not alter the final output. Examples include element-wise sum, mean or maximum.
 
 ### GNN Architecture for the Zinc data
 
