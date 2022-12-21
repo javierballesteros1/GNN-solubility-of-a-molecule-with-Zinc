@@ -100,11 +100,9 @@ $$
 {\displaystyle \mathbf {h} _{u}=\phi \left(\mathbf {x_{u}} ,\bigoplus _{v\in N_{u}}\psi (\mathbf {x} _{u},\mathbf {x} _{v},\mathbf {e} _{uv})\right)}
 $$
 
-where ${\displaystyle \phi }$  and ${\displaystyle \psi }$  are differentiable functions, and ${\displaystyle \bigoplus }$ is a permutation invariant aggregation operator that can accept an arbitrary number of inputs (e.g., element-wise sum, mean, or max). In particular, {\displaystyle \phi }\phi  and {\displaystyle \psi }\psi  are referred to as update and message functions, respectively. 
+where ${\displaystyle \phi }$  and ${\displaystyle \psi }$  are differentiable functions, and ${\displaystyle \bigoplus }$ is a permutation invariant aggregation operator that can accept an arbitrary number of inputs (e.g., element-wise sum, mean, or max). In particular, ${\displaystyle \phi }$ is the usual activation function that we usually see (ReLU will be used in this case-study)
 
-
-
-Node embedding
+In the literature we sometimes find that these layers are known to perform node embedding. For instance, [here](https://towardsdatascience.com/node-embeddings-for-beginners-554ab1625d98#:~:text=Node%20embeddings%20are%20a%20way,in%20machine%20learning%20prediction%20tasks.), we find a really good explanation of the reason behind carrying out this kind of layer. As it is said in this blog: node embeddings are a way of representing nodes as vectors, capturing the topology of the network relying on a notion of similarity.
 
 #### Readout layer (or Global pooling layer)
 
