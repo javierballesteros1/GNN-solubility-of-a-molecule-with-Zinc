@@ -110,7 +110,7 @@ A readout layer provides fixed-size representation of the whole graph. In other 
 
 ### GNN Architecture for the Zinc data
 
-Find below the architecture that we ...
+Find below the architecture that we found to have associated the lowest loss
 ```
 class GCN(nn.Module):
     def __init__(self, num_features, num_classes, hidden_channels_1, hidden_channels_2):
@@ -134,7 +134,7 @@ class GCN(nn.Module):
         g_pool = global_mean_pool(x, batch)
         return g_pool
 ```
-So the GNN architecture is given by
+The parameters `hidden_channels_1` and `hidden_channels_2` were also manually tuned, and we got to the following GNN
 
 ```
 GCN(  
@@ -144,14 +144,24 @@ GCN(
   (conv4): GCNConv(4, 1)  
 )
 ```
+However, we would like to mention that we also tried other GNN with parameters
+*   `hidden_channels_1 = 2` `hidden_channels_2 = 4` 
+*   `hidden_channels_1 = 4` `hidden_channels_2 = 2` 
+*   `hidden_channels_1 = 2` `hidden_channels_2 = 8` 
 
+but their performance was not as good as the model selected. 
 
 ### GNN Training
 
-Plot of the errors
+<p align="center">
+<img src="https://github.com/javierballesteros1/GNN-solubility-of-a-molecule-with-Zinc/blob/main/images/losstrainval.png" >
+</p>
 
 ### GNN Test
 MSE and...?
 
+### References
+```
 
+```
 
