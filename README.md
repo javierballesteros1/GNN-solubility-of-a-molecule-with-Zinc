@@ -93,32 +93,14 @@ The architecture of a generic GNN implements the following fundamental layers: M
 
 This layer maps a representation of a graph into an updated representation of the same graph. In the literature, permutation equivariant layers are implemented via pairwise message passing between graph nodes. Intuitively, in a message passing layer, nodes update their representations by aggregating the messages received from their immediate neighbours. As such, each message passing layer increases the receptive field of the GNN by one hop.
 
-We are going to put a bit more formally this explanation (following [this](https://en.wikipedia.org/wiki/Graph_neural_network)). Let ${\displaystyle G=(V,E)}$ be a graph, where ${\displaystyle V}$ is the node set and ${\displaystyle E}$ is the edge set. Let ${\displaystyle N_{u}}$ be the neighbourhood of some node ${\displaystyle u\in V}$. Additionally, let ${\displaystyle \mathbf {x} _{u}}{\displaystyle \mathbf {x} _{u}}$ be the features of node ${\displaystyle u\in V}$, and ${\displaystyle \mathbf {e} _{uv}}{\displaystyle \mathbf {e} _{uv}}$ be the features of edge ${\displaystyle (u,v)\in E}$. 
+We are going to put a bit more formally this explanation (following [this](https://en.wikipedia.org/wiki/Graph_neural_network)). Let ${\displaystyle G=(V,E)}$ be a graph, where ${\displaystyle V}$ is the node set and ${\displaystyle E}$ is the edge set. Let ${\displaystyle N_{u}}$ be the neighbourhood of some node ${\displaystyle u\in V}$. Additionally, let ${\displaystyle \mathbf {x} _{u}}$ be the features of node ${\displaystyle u\in V}$, and ${\displaystyle \mathbf {e} _{uv}}$ be the features of edge ${\displaystyle (u,v)\in E}$. Then, the outputs of message passing layer are node representations ${\displaystyle \mathbf {h} _{u}}$ for each node ${\displaystyle u\in V}$ in the graph: 
+
+
+$$
+{\displaystyle \mathbf {h} _{u}=\phi \left(\mathbf {x_{u}} ,\bigoplus _{v\in N_{u}}\psi (\mathbf {x} _{u},\mathbf {x} _{v},\mathbf {e} _{uv})\right)}
 $$
 
-$$
-
-
-
-[4]
-
-{\displaystyle \mathbf {h} _{u}=\phi \left(\mathbf {x_{u}} ,\bigoplus _{v\in N_{u}}\psi (\mathbf {x} _{u},\mathbf {x} _{v},\mathbf {e} _{uv})\right)}{\displaystyle \mathbf {h} _{u}=\phi \left(\mathbf {x_{u}} ,\bigoplus _{v\in N_{u}}\psi (\mathbf {x} _{u},\mathbf {x} _{v},\mathbf {e} _{uv})\right)}
-where {\displaystyle \phi }\phi  and {\displaystyle \psi }\psi  are differentiable functions (e.g., artificial neural networks), and {\displaystyle \bigoplus }{\displaystyle \bigoplus } is a permutation invariant aggregation operator that can accept an arbitrary number of inputs (e.g., element-wise sum, mean, or max). In particular, {\displaystyle \phi }\phi  and {\displaystyle \psi }\psi  are referred to as update and message functions, respectively. Intuitively, in an MPNN computational block, graph nodes update their representations by aggregating the messages received from their neighbours.
-
-The outputs of one or more MPNN layers are node representations {\displaystyle \mathbf {h} _{u}}{\displaystyle \mathbf {h} _{u}} for each node {\displaystyle u\in V}u \in V in the graph. Node representations can be employed for any downstream task, such as node/graph classification or edge prediction.
-
-
-
-
-
-
-
-
-
-
-
-
-
+where ${\displaystyle \phi }$  and ${\displaystyle \psi }$  are differentiable functions, and ${\displaystyle \bigoplus }$ is a permutation invariant aggregation operator that can accept an arbitrary number of inputs (e.g., element-wise sum, mean, or max). In particular, {\displaystyle \phi }\phi  and {\displaystyle \psi }\psi  are referred to as update and message functions, respectively. 
 
 
 
