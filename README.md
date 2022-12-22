@@ -160,7 +160,7 @@ In the plot below we can see how the GNN is performing as we are training it wit
 We are plotting how the GNN performs on both the train and the validation set.
 
 ### GNN Test
-For the test set, we got a loss of 
+For the test set, we got a loss of `[2.9310264945030213]`
 
 ### References
 
