@@ -1,5 +1,5 @@
 Packages required:
 
-* `torch`
-* `torch_geometric`
-* `networkx`
+- `torch`
+- `torch_geometric`
+- `networkx`
