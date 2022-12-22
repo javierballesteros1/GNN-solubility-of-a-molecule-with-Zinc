@@ -163,7 +163,7 @@ We are plotting how the GNN performs on both the train and the validation set.
 For the test set, we got a loss of 
 
 ### References
-```
+
 [1]: [Graph Neural Network and Some of GNN Applications: Everything You Need to Know](https://neptune.ai/blog/graph-neural-network-and-some-of-gnn-applications#:~:text=Graph%20Neural%20Networks%20(GNNs)%20are,and%20graph%2Dlevel%20prediction%20tasks)
 [2]: [TORCH_GEOMETRIC.DATASETS](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html#torch_geometric.datasets.ZINC)
 [3]: [PYG: COLAB NOTEBOOKS AND VIDEO TUTORIALS](https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html)
@@ -172,5 +172,5 @@ For the test set, we got a loss of
 [6]: [Graph Neural Network Layers](https://torchdrug.ai/docs/notes/layer.html#:~:text=A%20readout%20layer%20collects%20all,every%20node%20in%20the%20graph.)
 [7]: []()
 
-```
+
 
