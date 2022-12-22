@@ -176,7 +176,7 @@ For the test set, we got a loss of
 
 [6]: [Graph Neural Network Layers](https://torchdrug.ai/docs/notes/layer.html#:~:text=A%20readout%20layer%20collects%20all,every%20node%20in%20the%20graph.)
 
-[7]: []()
+[7]: [A Beginner’s Guide to Graph Neural Networks Using PyTorch Geometric — Part 1](https://towardsdatascience.com/a-beginners-guide-to-graph-neural-networks-using-pytorch-geometric-part-1-d98dc93e7742)
 
 
 
