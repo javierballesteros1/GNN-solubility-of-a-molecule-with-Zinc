@@ -166,7 +166,7 @@ For the test set, we got a loss of `[2.9310264945030213]`
 
 [1]: [Graph Neural Network and Some of GNN Applications: Everything You Need to Know](https://neptune.ai/blog/graph-neural-network-and-some-of-gnn-applications#:~:text=Graph%20Neural%20Networks%20(GNNs)%20are,and%20graph%2Dlevel%20prediction%20tasks). 
 
-[2]: [TORCH_GEOMETRIC.DATASETS](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html#torch_geometric.datasets.ZINC). 
+[2]: [TORCH GEOMETRIC DATASETS](https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html#torch_geometric.datasets.ZINC). 
 
 [3]: [PYG: COLAB NOTEBOOKS AND VIDEO TUTORIALS](https://pytorch-geometric.readthedocs.io/en/latest/notes/colabs.html)
 
